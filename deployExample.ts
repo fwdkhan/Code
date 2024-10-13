@@ -1,8 +1,4 @@
-import { serve } from "https://deno.land/std@0.106.0/http/server.ts";
-
-const server = serve({ port: 8000 });
-console.log("HTTP server running on http://localhost:8000");
-
-for await (const req of server) {
-  req.respond({ body: "Hello from Deno Deploy!" });
+function handler(_req: Request): Response {
+  return new Response("Hello from Deno Deploy!");
 }
+Deno.serve(handler);
