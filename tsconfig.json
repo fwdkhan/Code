@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "target": "es6",                  // Specifies ECMAScript target version
+      "module": "commonjs",              // Module code generation (CommonJS is used by Node.js)
+      "experimentalDecorators": true,    // Enable experimental support for decorators
+      "emitDecoratorMetadata": true,     // Emit decorator metadata for use with reflection libraries
+      "sourceMap": true,                 // Allows debugging in VS Code
+      "outDir": "./dist",                // Output directory for compiled JavaScript files
+      "moduleResolution": "node"         // Module resolution strategy for Node.js
+    },
+    "include": ["src/**/*.ts"],          // Include TypeScript source files
+    "exclude": ["node_modules"]          // Exclude node_modules
+  }
+  

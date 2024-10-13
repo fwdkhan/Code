@@ -1,0 +1,25 @@
+import { Application, Router } from 'https://deno.land/x/oak/mod.ts';
+
+const app = new Application();
+const router = new Router();
+
+// Simple authentication middleware
+const authMiddleware = async (context, next) => {
+  const token = context.request.headers.get('Authorization');
+  if (token === 'valid-token') {
+    await next(); // Proceed if authenticated
+  } else {
+    context.response.status = 401;
+    context.response.body = 'Unauthorized';
+  }
+};
+
+// Route that requires authentication
+router.get('/protected', authMiddleware, (context) => {
+  context.response.body = 'You are authenticated!';
+});
+
+app.use(router.routes());
+app.use(router.allowedMethods());
+
+await app.listen({ port: 8000 });
