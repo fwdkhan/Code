@@ -6,5 +6,10 @@
     ],
     "include": [],
     "entrypoint": "deployExample.ts"
+  },
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "experimentalDecorators": true
   }
 }
